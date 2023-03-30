@@ -24,7 +24,7 @@
     {
       "projectId": "v5kPWVs52pwRXwqqMcp9wM",
       "projectApiToken": "0uU7YINa406UmA6iW4RkJxCVwQizkIdDCembfyHyvWWuDzTdq69NGNN7Y43p8ixmj9lErf56sn8eboh9bbsA",
-      "projectName": "Blank project",
+      "projectName": "Test2",
       "version": "latest",
       "cssFilePath": "plasmic/blank_project/plasmic_blank_project.module.css",
       "components": [
@@ -51,6 +51,19 @@
             "modulePath": "Login.jsx"
           },
           "cssFilePath": "plasmic/blank_project/PlasmicLogin.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "wXiIj30Pce",
+          "name": "About",
+          "type": "managed",
+          "projectId": "v5kPWVs52pwRXwqqMcp9wM",
+          "renderModuleFilePath": "plasmic/test_2/PlasmicAbout.jsx",
+          "importSpec": {
+            "modulePath": "About.jsx"
+          },
+          "cssFilePath": "plasmic/test_2/PlasmicAbout.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }
