@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "files",
@@ -30,14 +30,27 @@
       "components": [
         {
           "id": "DbNFw3I6kWzV",
-          "name": "Homepage",
+          "name": "Home",
           "type": "managed",
           "projectId": "v5kPWVs52pwRXwqqMcp9wM",
-          "renderModuleFilePath": "plasmic/blank_project/PlasmicHomepage.jsx",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicHome.jsx",
           "importSpec": {
-            "modulePath": "Homepage.jsx"
+            "modulePath": "Home.jsx"
           },
-          "cssFilePath": "plasmic/blank_project/PlasmicHomepage.module.css",
+          "cssFilePath": "plasmic/blank_project/PlasmicHome.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "DmFxs3pJvR",
+          "name": "Login",
+          "type": "managed",
+          "projectId": "v5kPWVs52pwRXwqqMcp9wM",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicLogin.jsx",
+          "importSpec": {
+            "modulePath": "Login.jsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicLogin.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }
