@@ -14,6 +14,7 @@
     "@plasmicapp/loader-react": "^1.0.241",
     "@plasmicapp/react-web": "^0.2.188",
     "@syncfusion/ej2-base": "^21.1.37",
+    "@syncfusion/ej2-react-grids": "^21.1.37",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

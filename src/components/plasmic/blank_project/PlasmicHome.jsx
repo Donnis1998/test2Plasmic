@@ -18,6 +18,7 @@ import {
 } from "@plasmicapp/react-web";
 import { BsButton } from "../../customs/BSButton"; // plasmic-import: bdU_Gcq0jC/codeComponent
 import { BsDropdown } from "../../customs/BSDropdown"; // plasmic-import: w-_U8VX1RB/codeComponent
+import { GridControl } from "../../customs/BSGridControl"; // plasmic-import: hbSSI2e9VW/codeComponent
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: v5kPWVs52pwRXwqqMcp9wM/projectcss
 import sty from "./PlasmicHome.module.css"; // plasmic-import: DbNFw3I6kWzV/css
@@ -124,7 +125,7 @@ function PlasmicHome__RenderFunc(props) {
             data-plasmic-override={overrides.bsDropdown}
             bsInput={true}
             className={classNames("__wab_instance", sty.bsDropdown)}
-            color={"primary"}
+            color={"success"}
             dataSource={[
               { id: "USA", label: "United States of America" },
               { id: "EC", label: "Ecuador" },
@@ -133,6 +134,44 @@ function PlasmicHome__RenderFunc(props) {
             fields={{ text: "label", value: "id" }}
             width={200}
           />
+
+          <GridControl
+            data-plasmic-name={"gridControl"}
+            data-plasmic-override={overrides.gridControl}
+            allowPaging={true}
+            className={classNames("__wab_instance", sty.gridControl)}
+            dataSource={[
+              {
+                ProductID: 10250,
+                ProductName: "Sandia",
+                QuantityPerUnit: 12,
+                PurchaseDate: "2022-07-1",
+                UnitPrice: 30.5,
+                UnitsInStock: 20
+              },
+              {
+                ProductID: 10251,
+                ProductName: "Manzana",
+                QuantityPerUnit: 20,
+                PurchaseDate: "2022-07-2",
+                UnitPrice: 15.5,
+                UnitsInStock: 25
+              }
+            ]}
+            enableFrozenCommand={true}
+            gridData={{
+              columns: [
+                { field: "ProductID", width: 250 },
+                { field: "ProductName", width: 250 },
+                { field: "QuantityPerUnit", width: 250 },
+                { field: "PurchaseDate", width: 250 },
+                { field: "UnitPrice", width: 250 },
+                { field: "UnitsInStock", width: 250 }
+              ]
+            }}
+            height={300}
+            width={600}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -140,12 +179,22 @@ function PlasmicHome__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "text", "bsButton", "bsDropdown"],
+  root: [
+    "root",
+    "section",
+    "h1",
+    "text",
+    "bsButton",
+    "bsDropdown",
+    "gridControl"
+  ],
+
   section: ["section", "h1", "text"],
   h1: ["h1"],
   text: ["text"],
   bsButton: ["bsButton"],
-  bsDropdown: ["bsDropdown"]
+  bsDropdown: ["bsDropdown"],
+  gridControl: ["gridControl"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -186,6 +235,7 @@ export const PlasmicHome = Object.assign(
     text: makeNodeComponent("text"),
     bsButton: makeNodeComponent("bsButton"),
     bsDropdown: makeNodeComponent("bsDropdown"),
+    gridControl: makeNodeComponent("gridControl"),
     // Metadata about props expected for PlasmicHome
     internalVariantProps: PlasmicHome__VariantProps,
     internalArgProps: PlasmicHome__ArgProps,

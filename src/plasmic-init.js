@@ -78,7 +78,7 @@ PLASMIC.registerComponent(BSDropdown, {
     color: {
       type: "choice",
       options: ["default", "error", "success", "warning"],
-      defaultValue: "primary",
+      defaultValue: "success",
     },
     width: {
       type: "number",

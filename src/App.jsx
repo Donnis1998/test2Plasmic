@@ -8,6 +8,7 @@ import {
 } from "@plasmicapp/loader-react";
 import { useEffect, useState } from "react";
 import { PLASMIC } from "./plasmic-init";
+import '@bsoftsolution/bsoft-utils.assets.iconography'
 
 function Index() {
   return (
