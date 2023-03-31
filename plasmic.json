@@ -82,6 +82,21 @@
           "id": "kNCvJVZk1Y",
           "name": "Fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        },
+        {
+          "id": "hbSSI2e9VW",
+          "name": "GridControl",
+          "componentImportPath": "./src/components/customs/BSGridControl"
+        },
+        {
+          "id": "bdU_Gcq0jC",
+          "name": "BsButton",
+          "componentImportPath": "./src/components/customs/BSButton"
+        },
+        {
+          "id": "w-_U8VX1RB",
+          "name": "BsDropdown",
+          "componentImportPath": "./src/components/customs/BSDropdown"
         }
       ]
     }

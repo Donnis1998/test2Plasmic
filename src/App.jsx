@@ -1,7 +1,5 @@
 import React from "react";
 import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
-//import PlasmicHost from "./pages/PlasmicHost";
-
 import {
   //initPlasmicLoader,
   PlasmicRootProvider,
@@ -32,7 +30,6 @@ export function CatchAllPage() {
   const [loading, setLoading] = useState(true);
   const [pageData, setPageData] = useState(null);
   let location = useLocation();
-  console.log("props", location);
 
   useEffect(() => {
     async function load() {

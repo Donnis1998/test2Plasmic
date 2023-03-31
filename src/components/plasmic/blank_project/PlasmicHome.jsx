@@ -16,6 +16,8 @@ import {
   createPlasmicElementProxy,
   deriveRenderOpts
 } from "@plasmicapp/react-web";
+import { BsButton } from "../../customs/BSButton"; // plasmic-import: bdU_Gcq0jC/codeComponent
+import { BsDropdown } from "../../customs/BSDropdown"; // plasmic-import: w-_U8VX1RB/codeComponent
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: v5kPWVs52pwRXwqqMcp9wM/projectcss
 import sty from "./PlasmicHome.module.css"; // plasmic-import: DbNFw3I6kWzV/css
@@ -78,7 +80,7 @@ function PlasmicHome__RenderFunc(props) {
                 sty.h1
               )}
             >
-              {"Alberto Torres Apolinario"}
+              {"Alberto Torres "}
             </h1>
             <div
               data-plasmic-name={"text"}
@@ -109,6 +111,28 @@ function PlasmicHome__RenderFunc(props) {
               </React.Fragment>
             </div>
           </p.Stack>
+          <BsButton
+            data-plasmic-name={"bsButton"}
+            data-plasmic-override={overrides.bsButton}
+            className={classNames("__wab_instance", sty.bsButton)}
+            color={"info"}
+            content={"Continuar"}
+          />
+
+          <BsDropdown
+            data-plasmic-name={"bsDropdown"}
+            data-plasmic-override={overrides.bsDropdown}
+            bsInput={true}
+            className={classNames("__wab_instance", sty.bsDropdown)}
+            color={"primary"}
+            dataSource={[
+              { id: "USA", label: "United States of America" },
+              { id: "EC", label: "Ecuador" },
+              { id: "ES", label: "España" }
+            ]}
+            fields={{ text: "label", value: "id" }}
+            width={200}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -116,10 +140,12 @@ function PlasmicHome__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "text"],
+  root: ["root", "section", "h1", "text", "bsButton", "bsDropdown"],
   section: ["section", "h1", "text"],
   h1: ["h1"],
-  text: ["text"]
+  text: ["text"],
+  bsButton: ["bsButton"],
+  bsDropdown: ["bsDropdown"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -158,6 +184,8 @@ export const PlasmicHome = Object.assign(
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
     text: makeNodeComponent("text"),
+    bsButton: makeNodeComponent("bsButton"),
+    bsDropdown: makeNodeComponent("bsDropdown"),
     // Metadata about props expected for PlasmicHome
     internalVariantProps: PlasmicHome__VariantProps,
     internalArgProps: PlasmicHome__ArgProps,
