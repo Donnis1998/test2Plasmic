@@ -6,6 +6,7 @@ import {
   //initPlasmicLoader,
   PlasmicRootProvider,
   PlasmicComponent,
+  PlasmicCanvasHost,
 } from "@plasmicapp/loader-react";
 import { useEffect, useState } from "react";
 import { PLASMIC } from "./plasmic-init";
@@ -15,10 +16,8 @@ function Index() {
     <PlasmicRootProvider loader={PLASMIC}>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/*"
-            Component={CatchAllPage}
-          ></Route>
+          <Route path="/plasmic-host" element={<PlasmicCanvasHost />} />
+          <Route path="/*" Component={CatchAllPage}></Route>
         </Routes>
       </BrowserRouter>
     </PlasmicRootProvider>
@@ -37,9 +36,7 @@ export function CatchAllPage() {
 
   useEffect(() => {
     async function load() {
-      const pageData = await PLASMIC.maybeFetchComponentData(
-        location.pathname
-      );
+      const pageData = await PLASMIC.maybeFetchComponentData(location.pathname);
       setPageData(pageData);
       setLoading(false);
     }
