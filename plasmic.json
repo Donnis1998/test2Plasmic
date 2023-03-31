@@ -66,6 +66,19 @@
           "cssFilePath": "plasmic/test_2/PlasmicAbout.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "2zISYtN-0Q",
+          "name": "CustomButton",
+          "type": "managed",
+          "projectId": "v5kPWVs52pwRXwqqMcp9wM",
+          "renderModuleFilePath": "plasmic/test_2/PlasmicCustomButton.jsx",
+          "importSpec": {
+            "modulePath": "CustomButton.jsx"
+          },
+          "cssFilePath": "plasmic/test_2/PlasmicCustomButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [],
@@ -97,6 +110,11 @@
           "id": "w-_U8VX1RB",
           "name": "BsDropdown",
           "componentImportPath": "./src/components/customs/BSDropdown"
+        },
+        {
+          "id": "fJWICaoyQM",
+          "name": "Saludo",
+          "componentImportPath": "./src/components/customs/Saludo"
         }
       ]
     }

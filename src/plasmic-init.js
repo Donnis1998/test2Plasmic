@@ -2,6 +2,8 @@ import { initPlasmicLoader } from "@plasmicapp/loader-react";
 import { BSGridControl } from "./components/customs/BSGridControl";
 import { BSButton } from "./components/customs/BSButton";
 import { BSDropdown } from "./components/customs/BSDropdown";
+import { Saludo } from "./components/customs/Saludo";
+
 import {
   defaultColumnsGridControl,
   defaultDataGridControl,
@@ -100,6 +102,17 @@ PLASMIC.registerComponent(BSDropdown, {
           displayName: "Valor",
         },
       },
+    },
+  },
+});
+
+PLASMIC.registerComponent(Saludo, {
+  name: "Saludo",
+  importPath: "./src/components/customs/Saludo",
+  props: {
+    text: {
+      type: "string",
+      defaultValue: "Hola",
     },
   },
 });

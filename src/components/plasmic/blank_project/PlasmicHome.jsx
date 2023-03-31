@@ -16,7 +16,8 @@ import {
   createPlasmicElementProxy,
   deriveRenderOpts
 } from "@plasmicapp/react-web";
-import { BsButton } from "../../customs/BSButton"; // plasmic-import: bdU_Gcq0jC/codeComponent
+import CustomButton from "../../CustomButton"; // plasmic-import: 2zISYtN-0Q/component
+import { Saludo } from "../../customs/Saludo"; // plasmic-import: fJWICaoyQM/codeComponent
 import { BsDropdown } from "../../customs/BSDropdown"; // plasmic-import: w-_U8VX1RB/codeComponent
 import { GridControl } from "../../customs/BSGridControl"; // plasmic-import: hbSSI2e9VW/codeComponent
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -111,67 +112,72 @@ function PlasmicHome__RenderFunc(props) {
                 </React.Fragment>
               </React.Fragment>
             </div>
+            <CustomButton
+              data-plasmic-name={"customButton"}
+              data-plasmic-override={overrides.customButton}
+              className={classNames("__wab_instance", sty.customButton)}
+            />
+
+            <Saludo
+              data-plasmic-name={"saludo"}
+              data-plasmic-override={overrides.saludo}
+              className={classNames("__wab_instance", sty.saludo)}
+              text={"Hola bienvenido"}
+            />
+
+            <BsDropdown
+              data-plasmic-name={"bsDropdown"}
+              data-plasmic-override={overrides.bsDropdown}
+              bsInput={true}
+              className={classNames("__wab_instance", sty.bsDropdown)}
+              color={"success"}
+              dataSource={[
+                { id: "USA", label: "United States of America" },
+                { id: "EC", label: "Ecuador" },
+                { id: "ES", label: "España" }
+              ]}
+              fields={{ text: "label", value: "id" }}
+              width={200}
+            />
+
+            <GridControl
+              data-plasmic-name={"gridControl"}
+              data-plasmic-override={overrides.gridControl}
+              allowPaging={true}
+              className={classNames("__wab_instance", sty.gridControl)}
+              dataSource={[
+                {
+                  ProductID: 10250,
+                  ProductName: "Sandia",
+                  QuantityPerUnit: 12,
+                  PurchaseDate: "2022-07-1",
+                  UnitPrice: 30.5,
+                  UnitsInStock: 20
+                },
+                {
+                  ProductID: 10251,
+                  ProductName: "Manzana",
+                  QuantityPerUnit: 20,
+                  PurchaseDate: "2022-07-2",
+                  UnitPrice: 15.5,
+                  UnitsInStock: 25
+                }
+              ]}
+              enableFrozenCommand={true}
+              gridData={{
+                columns: [
+                  { field: "ProductID", width: 250 },
+                  { field: "ProductName", width: 250 },
+                  { field: "QuantityPerUnit", width: 250 },
+                  { field: "PurchaseDate", width: 250 },
+                  { field: "UnitPrice", width: 250 },
+                  { field: "UnitsInStock", width: 250 }
+                ]
+              }}
+              height={300}
+              width={600}
+            />
           </p.Stack>
-          <BsButton
-            data-plasmic-name={"bsButton"}
-            data-plasmic-override={overrides.bsButton}
-            className={classNames("__wab_instance", sty.bsButton)}
-            color={"info"}
-            content={"Continuar"}
-          />
-
-          <BsDropdown
-            data-plasmic-name={"bsDropdown"}
-            data-plasmic-override={overrides.bsDropdown}
-            bsInput={true}
-            className={classNames("__wab_instance", sty.bsDropdown)}
-            color={"success"}
-            dataSource={[
-              { id: "USA", label: "United States of America" },
-              { id: "EC", label: "Ecuador" },
-              { id: "ES", label: "España" }
-            ]}
-            fields={{ text: "label", value: "id" }}
-            width={200}
-          />
-
-          <GridControl
-            data-plasmic-name={"gridControl"}
-            data-plasmic-override={overrides.gridControl}
-            allowPaging={true}
-            className={classNames("__wab_instance", sty.gridControl)}
-            dataSource={[
-              {
-                ProductID: 10250,
-                ProductName: "Sandia",
-                QuantityPerUnit: 12,
-                PurchaseDate: "2022-07-1",
-                UnitPrice: 30.5,
-                UnitsInStock: 20
-              },
-              {
-                ProductID: 10251,
-                ProductName: "Manzana",
-                QuantityPerUnit: 20,
-                PurchaseDate: "2022-07-2",
-                UnitPrice: 15.5,
-                UnitsInStock: 25
-              }
-            ]}
-            enableFrozenCommand={true}
-            gridData={{
-              columns: [
-                { field: "ProductID", width: 250 },
-                { field: "ProductName", width: 250 },
-                { field: "QuantityPerUnit", width: 250 },
-                { field: "PurchaseDate", width: 250 },
-                { field: "UnitPrice", width: 250 },
-                { field: "UnitsInStock", width: 250 }
-              ]
-            }}
-            height={300}
-            width={600}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -184,15 +190,26 @@ const PlasmicDescendants = {
     "section",
     "h1",
     "text",
-    "bsButton",
+    "customButton",
+    "saludo",
     "bsDropdown",
     "gridControl"
   ],
 
-  section: ["section", "h1", "text"],
+  section: [
+    "section",
+    "h1",
+    "text",
+    "customButton",
+    "saludo",
+    "bsDropdown",
+    "gridControl"
+  ],
+
   h1: ["h1"],
   text: ["text"],
-  bsButton: ["bsButton"],
+  customButton: ["customButton"],
+  saludo: ["saludo"],
   bsDropdown: ["bsDropdown"],
   gridControl: ["gridControl"]
 };
@@ -233,7 +250,8 @@ export const PlasmicHome = Object.assign(
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
     text: makeNodeComponent("text"),
-    bsButton: makeNodeComponent("bsButton"),
+    customButton: makeNodeComponent("customButton"),
+    saludo: makeNodeComponent("saludo"),
     bsDropdown: makeNodeComponent("bsDropdown"),
     gridControl: makeNodeComponent("gridControl"),
     // Metadata about props expected for PlasmicHome
